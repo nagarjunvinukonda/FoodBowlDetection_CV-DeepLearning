@@ -30,6 +30,11 @@ b. Discuss different alternatives to also output the ingredients in the bowl. <b
 3. A concise and detailed report (half a page to one page) covering methodology, results, and discussions. <br />
 
 
+## Run the Project:
+
+I trainined this network using Google Co-lab with GPU: NVIDIA A100-SXM4-40GB. You can run the BowlDetectorCode.ipynb jupyter notebook.
+
+
 ## Model:
 
 The Model I used is Faster R-CNN with ResNet-50 backbone + 5-level FPN.
