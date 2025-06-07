@@ -34,12 +34,15 @@ b. Discuss different alternatives to also output the ingredients in the bowl. <b
 
 The Model I used is Faster R-CNN with ResNet-50 backbone + 5-level FPN.
 
-I selected this model based on this research:
+I selected this model based on this research: <br />
 ![ModelResearch](https://github.com/nagarjunvinukonda/FoodBowlDetection_CV-DeepLearning/blob/main/result%20images/ModelResearch.png) <br />
 
 
-Training perfromance: 
+### Training performance: <br />
 
+With 4-Fold Cross Validation and its inferences<br />
+![TrainingPerformace2](https://github.com/nagarjunvinukonda/FoodBowlDetection_CV-DeepLearning/blob/main/result%20images/TrainingPerformace2.png) <br />
+![TrainingPerformace](https://github.com/nagarjunvinukonda/FoodBowlDetection_CV-DeepLearning/blob/main/result%20images/TrainingPerformace.png) <br />
 
 ## My result:
 ![1](https://github.com/nagarjunvinukonda/FoodBowlDetection_CV-DeepLearning/blob/main/result%20images/1.png) <br />
@@ -52,3 +55,18 @@ Precision Vs Recall: <br />
 ![Precision Vs Recall](https://github.com/nagarjunvinukonda/FoodBowlDetection_CV-DeepLearning/blob/main/result%20images/PVR.png) <br />
 
 
+## Summary of this project: 
+
+1. I re‐labeled all training/test images in YOLO format to ensure consistent empty vs. full classes and corrected all bounding‐box placements (including rotated bowls). 
+2. I implemented a Faster R-CNN (ResNet-50 + FPN) detector in PyTorch, fine‐tuned from COCO weights, with data augmentations (flip + color jitter) and a GIoU loss term to improve localization.
+3. I performed 4-fold cross‐validation (stratified to avoid near‐duplicate leakage), each fold trained for 30 epochs.
+4. I reported per‐fold mAP@0.5 / mAP@[0.5:0.95] metrics and the final held‐out test scores (Test mAP@0.5 ≈ 0.38).
+5. I packaged our deliverables:
+o final.ipynb containing all code cells (data loading, training, validation, evaluation, ONNX export). <br />
+o fasterrcnn_bowl_best.pth (PyTorch weights) <br />
+o bowl_detector.onnx (ONNX model for inference) <br />
+o Precision–Recall curve and GT vs. prediction images saved as PNG. <br />
+o This detailed report (no page limit) and the earlier one‐page summary. <br />
+6. I outlined extensions for predicting bowl orientation and recognizing ingredients, including multi‐task architectures and semi‐supervised bootstrapping. <br />
+
+By following these instructions, anyone can reproduce our results in Colab, inspect the example detections, and use our ONNX model on‐device (e.g., a Jetson Orin or a CPU laptop). The next steps to improve generalization would be to collect 1 k+ diverse images, annotate via a human‐in‐the‐loop pipeline, and explore one‐stage detectors (YOLOv5/7) or segment‐based approaches for pixel‐level precision.
