@@ -34,11 +34,11 @@ b. Discuss different alternatives to also output the ingredients in the bowl. <b
 
 The Model I used is Faster R-CNN with ResNet-50 backbone + 5-level FPN.
 
+I selected this model based on this research:
+![ModelResearch](https://github.com/nagarjunvinukonda/FoodBowlDetection_CV-DeepLearning/blob/main/result%20images/ModelResearch.png) <br />
 
-![image](https://github.com/user-attachments/assets/aba8e44b-421e-4e5e-971c-b26a5d6b10f5)
 
-
-After training I got the following results: 
+Training perfromance: 
 
 
 ## My result:
